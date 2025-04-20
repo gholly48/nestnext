@@ -6,5 +6,5 @@ export interface Job extends BaseEntity {
   category: string;
   location: string;
   website: string | null;
-  userId: number;
+  authorId: number;
 }

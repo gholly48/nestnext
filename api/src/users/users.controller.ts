@@ -1,10 +1,11 @@
 // src/users/users.controller.ts
 import { Controller, Get, Post, Put, Delete, Body, Param, ParseIntPipe } from '@nestjs/common';
 import { UsersService } from './users.service';
-import { User } from './user.entity';
+import { User } from '@prisma/client';
 
 @Controller('users')
 export class UsersController {
+  profilesService: any;
   constructor(private readonly usersService: UsersService) {}
 
   @Post()
@@ -28,8 +29,12 @@ export class UsersController {
   }
 
   @Delete(':id')
-  remove(@Param('id', ParseIntPipe) id: number): Promise<boolean> {
+  remove(@Param('id', ParseIntPipe) id: number): Promise<void> {
     return this.usersService.remove(id);
   }
-
-}
+  
+  @Get('/profile/:userId')
+  async getProfileUser(@Param('userId', ParseIntPipe) userId: number) {
+    return this.usersService.findProfilesUser(userId);
+  }
+} 

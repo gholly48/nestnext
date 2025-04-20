@@ -3,5 +3,6 @@ import { BaseEntity } from '../common/base.entity';
 export interface User extends BaseEntity {
   email:    string;
   password: string;
-  phone:    string | null;
+  phone?:   string;
+  role:     string;
 }
