@@ -30,7 +30,7 @@ export class JobsController {
   remove(@Param('id', ParseIntPipe) id: number): Promise<Job | null> {
     return this.jobsService.remove(id);
   }
-
+ 
   // jobs.controller.ts
 @Get('/user/:userId')
 async getJobsByUser(@Param('userId', ParseIntPipe) userId: number) {

@@ -5,10 +5,10 @@ import { UsersModule } from './users/users.module';
 import { JobsModule } from './jobs/jobs.module';
 import { AuthService } from './auth/auth.service';
 import { AuthModule } from './auth/auth.module';
-import { ProfilesModule } from './profiles/profiles.module';
+//import { ProfilesModule } from './profiles/profiles.module';
 
 @Module({
-  imports:   [UsersModule, JobsModule, AuthModule, ProfilesModule],
+  imports:   [UsersModule, JobsModule, AuthModule, /*ProfilesModule]*/],
   providers: [AuthService, PrismaModule],
 })
 
