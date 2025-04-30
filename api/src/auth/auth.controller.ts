@@ -1,7 +1,7 @@
 import { Controller, Post, Body, UseGuards, Headers, HttpStatus, HttpException } from '@nestjs/common'
 import { AuthService } from './auth.service'
 import { AuthGuard } from '@nestjs/passport'
-import { User } from '@prisma/client'
+import { User } from '../../generated/prisma'
 import { BlacklistService } from 'src/auth/blacklist.service'
 
 @Controller('auth')

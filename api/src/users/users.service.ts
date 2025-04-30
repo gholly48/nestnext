@@ -1,6 +1,6 @@
 import { ConflictException, Injectable, NotFoundException } from '@nestjs/common'
 import { PrismaService } from '../prisma/prisma.service'
-import { User } from '@prisma/client'
+import { User } from '../../generated/prisma'
 import * as bcrypt  from 'bcryptjs'
 
 @Injectable()
